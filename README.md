@@ -1,4 +1,4 @@
-# 📊 Laporan Bulanan
+# <img src="logo.png" width="32" height="32" alt="Logo"> Laporan Bulanan
 
 Aplikasi Pelaporan Kegiatan Bulanan berbasis Laravel dengan fitur lengkap untuk mengelola dan memverifikasi laporan kegiatan.
 
