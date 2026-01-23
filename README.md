@@ -1,112 +1,143 @@
-# <img src="logo.png" width="32" height="32" alt="Logo"> Laporan Bulanan
+# Laporan Bulanan
 
-Aplikasi Pelaporan Kegiatan Bulanan berbasis Laravel dengan fitur lengkap untuk mengelola dan memverifikasi laporan kegiatan.
+Aplikasi pelaporan kegiatan bulanan berbasis Laravel untuk mengelola, memverifikasi, dan mengekspor data laporan kegiatan secara terstruktur.
 
-![Laravel](https://img.shields.io/badge/Laravel-11-red?style=flat-square&logo=laravel)
-![PHP](https://img.shields.io/badge/PHP-8.2+-blue?style=flat-square&logo=php)
-![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
+![Laravel](https://img.shields.io/badge/Laravel-12-FF2D20?style=flat-square&logo=laravel&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-8.2+-777BB4?style=flat-square&logo=php&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)
 
-## ✨ Fitur Utama
+---
 
-### 👤 Untuk Anggota
-- 📝 Lapor kegiatan dengan foto sebelum & sesudah
-- 📍 Lokasi GPS otomatis atau pilih manual di peta
-- 💰 Pencatatan anggaran kegiatan
-- 📊 Dashboard statistik kegiatan & anggaran
-- 🔄 Sistem revisi kegiatan dari admin
+## Fitur
 
-### 👨‍💼 Untuk Admin
-- ✅ Verifikasi kegiatan (Setuju/Revisi/Tolak)
-- 📝 Berikan catatan revisi untuk perbaikan
-- 📈 Lihat statistik anggaran bulanan (chart)
-- 👥 Manajemen user (ubah role admin/anggota)
-- 📥 Export laporan ke Excel & Word
+### Anggota
+- Pelaporan kegiatan dengan dokumentasi foto (sebelum dan sesudah)
+- Pencatatan lokasi GPS secara otomatis atau manual melalui peta interaktif
+- Pencatatan anggaran kegiatan
+- Dashboard statistik personal
+- Sistem revisi berdasarkan feedback admin
 
-### 🎨 Fitur Umum
-- 🌙 Dark/Light mode
-- 📱 Responsive design
-- 🖼️ Upload foto profil dengan cropper (seperti Instagram)
-- 🔐 Autentikasi aman
+### Administrator
+- Verifikasi kegiatan dengan opsi setuju, revisi, atau tolak
+- Pemberian catatan revisi untuk perbaikan
+- Visualisasi statistik anggaran bulanan
+- Manajemen pengguna dan pengaturan role
+- Export laporan ke format Excel dan Word
 
-## 🚀 Instalasi
+### Umum
+- Mode tampilan terang dan gelap
+- Desain responsif untuk berbagai perangkat
+- Upload dan crop foto profil
+- Sistem autentikasi yang aman
 
-### Prasyarat
-- PHP 8.2+
+---
+
+## Persyaratan Sistem
+
+- PHP 8.2 atau lebih tinggi
 - Composer
-- Node.js & NPM
+- Node.js dan NPM
 - SQLite atau MySQL
 
-### Langkah Instalasi
+---
+
+## Instalasi
 
 ```bash
 # Clone repository
 git clone https://github.com/ZUNiar-HilMI/laporan-bulanan.git
 cd laporan-bulanan
 
-# Install dependencies
+# Install PHP dependencies
 composer install
+
+# Install JavaScript dependencies
 npm install
 
-# Setup environment
+# Konfigurasi environment
 cp .env.example .env
 php artisan key:generate
 
-# Buat database SQLite
+# Setup database (SQLite)
 touch database/database.sqlite
 
-# Jalankan migrasi
+# Jalankan migrasi database
 php artisan migrate
 
-# Link storage
+# Buat symbolic link untuk storage
 php artisan storage:link
 
-# Jalankan server
+# Jalankan development server
 php artisan serve
 ```
 
-Buka `http://localhost:8000` di browser.
-
-## 📸 Screenshot
-
-| Dashboard | Verifikasi Admin |
-|-----------|------------------|
-| Statistik kegiatan & anggaran | Approve/Revisi/Reject kegiatan |
-
-| Profile | Lapor Kegiatan |
-|---------|----------------|
-| Edit foto dengan cropper | Form dengan GPS & peta |
-
-## 🛠️ Tech Stack
-
-- **Backend:** Laravel 11
-- **Database:** SQLite / MySQL
-- **Frontend:** Blade, Bootstrap 5, Chart.js
-- **Maps:** Leaflet.js + OpenStreetMap
-- **Image Cropper:** Cropper.js
-- **Export:** PhpSpreadsheet, PhpWord
-
-## 📁 Struktur Folder
-
-```
-├── app/
-│   ├── Exports/          # Export Excel & Word
-│   ├── Http/Controllers/ # Controllers
-│   ├── Models/           # Eloquent Models
-│   └── Middleware/       # Role Middleware
-├── database/migrations/  # Database migrations
-├── resources/views/      # Blade templates
-├── routes/web.php        # Web routes
-└── public/               # Public assets
-```
-
-## 👨‍💻 Kontributor
-
-- **ZUNiar-HilMI** - Developer
-
-## 📄 Lisensi
-
-Project ini menggunakan lisensi MIT.
+Akses aplikasi melalui `http://localhost:8000`
 
 ---
 
-⭐ Jika project ini membantu, berikan bintang!
+## Tech Stack
+
+| Komponen | Teknologi |
+|----------|-----------|
+| Backend | Laravel 12 |
+| Database | SQLite / MySQL |
+| Frontend | Blade, Bootstrap 5 |
+| Visualisasi | Chart.js |
+| Peta | Leaflet.js, OpenStreetMap |
+| Image Processing | Cropper.js |
+| Export | PhpSpreadsheet, PhpWord |
+
+---
+
+## Struktur Proyek
+
+```
+laporan-bulanan/
+├── app/
+│   ├── Exports/              # Logic export Excel dan Word
+│   ├── Http/Controllers/     # Controllers
+│   ├── Models/               # Eloquent Models
+│   └── Middleware/           # Role-based middleware
+├── database/
+│   └── migrations/           # Database migrations
+├── resources/
+│   └── views/                # Blade templates
+├── routes/
+│   └── web.php               # Web routes
+└── public/                   # Public assets
+```
+
+---
+
+## Penggunaan
+
+### Development
+
+```bash
+# Menjalankan semua service development secara bersamaan
+composer dev
+```
+
+### Testing
+
+```bash
+composer test
+```
+
+### Setup Cepat
+
+```bash
+composer setup
+```
+
+---
+
+## Kontributor
+
+- ZUNiar-HilMI
+
+---
+
+## Lisensi
+
+Proyek ini dilisensikan di bawah [MIT License](LICENSE).
